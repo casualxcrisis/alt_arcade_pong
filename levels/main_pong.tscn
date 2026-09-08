@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c26tp1q3thg2h"]
+
+[ext_resource type="PackedScene" uid="uid://bivclf48dcgh" path="res://player_paddles/player_left.tscn" id="1_7nqg8"]
+[ext_resource type="PackedScene" uid="uid://b7ggwop76i8w" path="res://ball/ball.tscn" id="2_7nqg8"]
+[ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
+[ext_resource type="PackedScene" uid="uid://cw61jy3jbn71r" path="res://side_scoring_walls/left_player_wall.tscn" id="4_7sdbi"]
+[ext_resource type="PackedScene" uid="uid://qpkj7dpgsghc" path="res://side_scoring_walls/right_player_wall.tscn" id="5_8s722"]
+[ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
+
+[node name="main_pong" type="Node2D" unique_id=238374251]
+
+[node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
+position = Vector2(45, 256)
+
+[node name="ball" parent="." unique_id=1556691080 instance=ExtResource("2_7nqg8")]
+position = Vector2(568, 287)
+scale = Vector2(0.52, 0.52)
+
+[node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
+position = Vector2(1123, 250)
+
+[node name="left_player_wall" parent="." unique_id=32918851 instance=ExtResource("4_7sdbi")]
+position = Vector2(-24, 327)
+scale = Vector2(1, 1.3999987)
+
+[node name="right_player_wall" parent="." unique_id=681714928 instance=ExtResource("5_8s722")]
+position = Vector2(1175, 325)
+scale = Vector2(0.96000004, 1.4000013)
+
+[node name="top_bottom_wall" parent="." unique_id=477137306 instance=ExtResource("6_8s722")]
+position = Vector2(578.99994, -30)
+rotation = 1.5696875
+scale = Vector2(1.2560364, 2.5141802)
+
+[node name="top_bottom_wall2" parent="." unique_id=1053510125 instance=ExtResource("6_8s722")]
+position = Vector2(579, 674.99994)
+rotation = 1.5696875
+scale = Vector2(1.0709343, 2.482466)

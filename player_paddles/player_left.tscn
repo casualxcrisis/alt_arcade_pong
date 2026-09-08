@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bivclf48dcgh"]
+
+[ext_resource type="Texture2D" uid="uid://dlivy3owqrsbq" path="res://textures/cardboard_texture.jpg" id="1_38pjf"]
+[ext_resource type="Script" uid="uid://f62ywishphx3" path="res://player_paddles/player_left.gd" id="1_201oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6girn"]
+size = Vector2(22, 94)
+
+[node name="player_left" type="CharacterBody2D" unique_id=1713023521]
+script = ExtResource("1_201oy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1003646311]
+position = Vector2(-1, 37)
+scale = Vector2(1, 0.80000246)
+shape = SubResource("RectangleShape2D_6girn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=723086802]
+position = Vector2(-1, 37.000004)
+scale = Vector2(0.027499998, 0.1410886)
+texture = ExtResource("1_38pjf")

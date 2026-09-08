@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qpkj7dpgsghc"]
+
+[ext_resource type="Texture2D" uid="uid://bva0dvx8c3crt" path="res://textures/blue_fabric.jpg" id="1_621bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3s4wx"]
+size = Vector2(1.9924427, 22.737095)
+
+[node name="right_player_wall" type="StaticBody2D" unique_id=681714928]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=774802885]
+scale = Vector2(0.038901202, 0.38825288)
+texture = ExtResource("1_621bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=958750075]
+position = Vector2(-0.08757043, 2.9802322e-08)
+scale = Vector2(23.17514, 20.495142)
+shape = SubResource("RectangleShape2D_3s4wx")
