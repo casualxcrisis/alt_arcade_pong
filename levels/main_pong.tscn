@@ -1,23 +1,34 @@
 [gd_scene format=3 uid="uid://c26tp1q3thg2h"]
 
-[ext_resource type="Texture2D" uid="uid://o01i4wk71ubl" path="res://background_images/4204512.jpg" id="1_0wvti"]
 [ext_resource type="PackedScene" uid="uid://bivclf48dcgh" path="res://player_paddles/player_left.tscn" id="1_7nqg8"]
+[ext_resource type="Texture2D" uid="uid://dkb15ybe6rjdl" path="res://background_images/ufc_type_arena.jpg" id="1_jyf24"]
 [ext_resource type="PackedScene" uid="uid://b7ggwop76i8w" path="res://ball/ball.tscn" id="2_7nqg8"]
 [ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
-[ext_resource type="PackedScene" uid="uid://cw61jy3jbn71r" path="res://side_scoring_walls/left_player_wall.tscn" id="4_7sdbi"]
-[ext_resource type="PackedScene" uid="uid://qpkj7dpgsghc" path="res://side_scoring_walls/right_player_wall.tscn" id="5_8s722"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
 [ext_resource type="AudioStream" uid="uid://drydtx8ncynb1" path="res://music/DavidKBD - Pink Bloom Pack - 01 - Pink Bloom.ogg" id="8_jyf24"]
+[ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="9_i8x3p"]
+[ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
+[ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kps3k"]
+size = Vector2(20, 662)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
+size = Vector2(20, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc5ad"]
+size = Vector2(3.25, 641.5)
 
 [node name="main_pong" type="Node2D" unique_id=238374251]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1244416544]
-offset_left = -110.99994
-offset_top = -49.99994
-offset_right = 3729.0
-offset_bottom = 2110.0
-scale = Vector2(0.36, 0.36)
-texture = ExtResource("1_0wvti")
+[node name="hud" type="CanvasLayer" parent="." unique_id=1740131194]
+
+[node name="arena_background" type="TextureRect" parent="." unique_id=2026362369]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1154.0
+offset_bottom = 650.0
+texture = ExtResource("1_jyf24")
 
 [node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
 position = Vector2(45, 256)
@@ -26,18 +37,11 @@ speed = 600
 [node name="ball" parent="." unique_id=1556691080 instance=ExtResource("2_7nqg8")]
 position = Vector2(557, 298)
 scale = Vector2(0.52, 0.52)
+ball_speed = 8
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1123, 250)
 speed = 600
-
-[node name="left_player_wall" parent="." unique_id=32918851 instance=ExtResource("4_7sdbi")]
-position = Vector2(-24, 327)
-scale = Vector2(1, 1.3999987)
-
-[node name="right_player_wall" parent="." unique_id=681714928 instance=ExtResource("5_8s722")]
-position = Vector2(1175, 325)
-scale = Vector2(0.96000004, 1.4000013)
 
 [node name="top_bottom_wall" parent="." unique_id=477137306 instance=ExtResource("6_8s722")]
 position = Vector2(579, -29)
@@ -49,8 +53,94 @@ position = Vector2(579, 675)
 rotation = 1.5696875
 scale = Vector2(1.0709343, 2.482466)
 
+[node name="top_bottom_wall3" parent="." unique_id=1443852664 instance=ExtResource("6_8s722")]
+position = Vector2(-24.000004, 409.00003)
+rotation = 0.00073194504
+scale = Vector2(1.0709343, 2.482466)
+
+[node name="top_bottom_wall4" parent="." unique_id=1350244682 instance=ExtResource("6_8s722")]
+position = Vector2(1179.9999, 409.00003)
+rotation = 0.00073194504
+scale = Vector2(1.0709343, 2.482466)
+
 [node name="background_music" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
 stream = ExtResource("8_jyf24")
 volume_db = -7.299
 autoplay = true
 parameters/looping = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=716771288]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1544079012]
+position = Vector2(79, 321)
+shape = SubResource("RectangleShape2D_kps3k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1968390884]
+position = Vector2(1007, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2067172275]
+position = Vector2(79, 321)
+shape = SubResource("RectangleShape2D_kps3k")
+
+[node name="left_user_interface" type="Control" parent="." unique_id=391849310]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.0
+offset_right = 23.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="left_score" type="Label" parent="left_user_interface" unique_id=432354885]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 54.0
+offset_top = 31.0
+offset_right = 189.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("9_i8x3p")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("10_jfxgk")
+
+[node name="right_user_interface" type="Control" parent="." unique_id=727371450]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1028.0
+offset_top = 31.0
+offset_right = 1068.0
+offset_bottom = 71.0
+
+[node name="right_score" type="Label" parent="right_user_interface" unique_id=543239511]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -21.0
+offset_right = 114.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("9_i8x3p")
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+script = ExtResource("9_jfxgk")
+
+[node name="right_score_zone" type="Area2D" parent="." unique_id=1122364855]
+position = Vector2(21.000002, 13)
+scale = Vector2(0.40000105, 1.3200004)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_score_zone" unique_id=585945638]
+position = Vector2(-39.9999, 234.09084)
+scale = Vector2(0.5000013, 0.72727376)
+shape = SubResource("RectangleShape2D_0yd1l")
+
+[node name="left_score_zone" type="Area2D" parent="." unique_id=661992702]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_score_zone" unique_id=971392166]
+position = Vector2(1148.625, 323.75)
+shape = SubResource("RectangleShape2D_sc5ad")
+
+[connection signal="body_entered" from="right_score_zone" to="right_user_interface/right_score" method="_on_right_score_zone_body_entered"]
+[connection signal="body_entered" from="left_score_zone" to="left_user_interface/left_score" method="_on_left_score_zone_body_entered"]
