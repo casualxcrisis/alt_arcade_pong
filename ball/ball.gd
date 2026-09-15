@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var ball_speed = 12
 
 var array: Array[int] = [1, 2, 3, -1, -2, -3] # sets the array to choose a random number from to vary the serve angle
-
+var other_array: Array[Variant] = [-ball_speed, ball_speed]
 
 func _ready() -> void:
-	velocity = Vector2(-ball_speed, array.pick_random()) # this will launch the ball to the left, maybe add an conditional that flips it if the ball has collided with other side - to simulate the serve from winning player
+	velocity = Vector2(other_array.pick_random(), array.pick_random()) # this will launch the ball to the left, maybe add an conditional that flips it if the ball has collided with other side - to simulate the serve from winning player
 	
 func _process(_delta: float) -> void:
 	$AnimatedSprite2D.play("idle")	
