@@ -21,13 +21,12 @@ size = Vector2(3.25, 641.5)
 
 [node name="main_pong" type="Node2D" unique_id=238374251]
 
-[node name="hud" type="CanvasLayer" parent="." unique_id=1740131194]
-
 [node name="arena_background" type="TextureRect" parent="." unique_id=2026362369]
-offset_left = 1.0
+offset_left = -37.0
 offset_top = 2.0
-offset_right = 1154.0
+offset_right = 1116.0
 offset_bottom = 650.0
+scale = Vector2(1.0310744, 1.1096085)
 texture = ExtResource("1_jyf24")
 
 [node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
@@ -123,8 +122,32 @@ offset_right = 114.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 30
-text = "Score: 0"
 script = ExtResource("9_jfxgk")
+
+[node name="countdown" type="Control" parent="." unique_id=1518447756]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 544.0
+offset_top = 275.0
+offset_right = 584.0
+offset_bottom = 315.0
+
+[node name="countdown_numbers" type="Label" parent="countdown" unique_id=254333376]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -79.5
+offset_right = 20.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_i8x3p")
+theme_override_font_sizes/font_size = 136
 
 [node name="right_score_zone" type="Area2D" parent="." unique_id=1122364855]
 position = Vector2(21.000002, 13)

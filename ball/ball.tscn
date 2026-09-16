@@ -104,6 +104,7 @@ scale = Vector2(3.5600019, 3.5600019)
 shape = SubResource("CircleShape2D_0yd1l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1504119604]
+unique_name_in_owner = true
 position = Vector2(0, 14.999999)
 scale = Vector2(4.3599997, 4.3599997)
 sprite_frames = SubResource("SpriteFrames_0yd1l")
