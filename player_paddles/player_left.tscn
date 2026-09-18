@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://betljdv0m3gc3" path="res://player_paddles/clenched_fist.png" id="2_gpa8s"]
 [ext_resource type="AudioStream" uid="uid://dab4xapeomfxc" path="res://sound_effects/male_heave_strain.wav" id="3_gpa8s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6girn"]
-size = Vector2(46, 73.7497)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpa8s"]
 
 [node name="player_left" type="CharacterBody2D" unique_id=1713023521]
 collision_layer = 3
@@ -15,8 +14,8 @@ script = ExtResource("1_201oy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1003646311]
 position = Vector2(-1.0083927, 36.500023)
 rotation = 0.0022085414
-scale = Vector2(1, 0.8000024)
-shape = SubResource("RectangleShape2D_6girn")
+scale = Vector2(2.400527, 2.1202648)
+shape = SubResource("CapsuleShape2D_gpa8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=723086802]
 position = Vector2(-1, 37.000004)

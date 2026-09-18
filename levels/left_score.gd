@@ -7,12 +7,13 @@ func _ready() -> void:
 	
 	
 func _on_left_score_zone_body_entered(body: Node2D) -> void:
-	left_score += 1
-	var string = var_to_str(left_score)
-	%left_score.set_text("Score: " + string)
-	body.queue_free()
-	get_node("%press_r").visible = true
-	get_node("%press_r").set_text("Left Player Scores! \nPress 'R' to Re-serve")
+	if body.is_in_group("ball"):
+		left_score += 1
+		var string = var_to_str(left_score)
+		%left_score.set_text("Score: " + string)
+		body.queue_free()
+		get_node("%press_r").visible = true
+		get_node("%press_r").set_text("Left Player Scores! \nPress 'R' to Re-serve")
 	
 	
 	

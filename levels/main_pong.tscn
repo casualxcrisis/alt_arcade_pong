@@ -31,7 +31,7 @@ scale = Vector2(1.0310744, 1.1096085)
 texture = ExtResource("1_jyf24")
 
 [node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
-position = Vector2(45, 256)
+position = Vector2(37, 256)
 speed = 600
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
