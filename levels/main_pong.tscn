@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c26tp1q3thg2h"]
 
 [ext_resource type="PackedScene" uid="uid://bivclf48dcgh" path="res://player_paddles/player_left.tscn" id="1_7nqg8"]
+[ext_resource type="Script" uid="uid://bl4jlmjhov2ux" path="res://levels/main_pong.gd" id="1_jfxgk"]
 [ext_resource type="Texture2D" uid="uid://dkb15ybe6rjdl" path="res://background_images/ufc_type_arena.jpg" id="1_jyf24"]
-[ext_resource type="PackedScene" uid="uid://b7ggwop76i8w" path="res://ball/ball.tscn" id="2_7nqg8"]
 [ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
 [ext_resource type="AudioStream" uid="uid://drydtx8ncynb1" path="res://music/DavidKBD - Pink Bloom Pack - 01 - Pink Bloom.ogg" id="8_jyf24"]
@@ -20,6 +20,7 @@ size = Vector2(20, 658)
 size = Vector2(3.25, 641.5)
 
 [node name="main_pong" type="Node2D" unique_id=238374251]
+script = ExtResource("1_jfxgk")
 
 [node name="arena_background" type="TextureRect" parent="." unique_id=2026362369]
 offset_left = -37.0
@@ -32,11 +33,6 @@ texture = ExtResource("1_jyf24")
 [node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
 position = Vector2(45, 256)
 speed = 600
-
-[node name="ball" parent="." unique_id=1556691080 instance=ExtResource("2_7nqg8")]
-position = Vector2(557, 298)
-scale = Vector2(0.52, 0.52)
-ball_speed = 8
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1123, 250)
@@ -165,5 +161,6 @@ position = Vector2(2, 0)
 position = Vector2(1148.625, 323.75)
 shape = SubResource("RectangleShape2D_sc5ad")
 
+[connection signal="body_entered" from="right_score_zone" to="." method="_on_right_score_zone_body_entered"]
 [connection signal="body_entered" from="right_score_zone" to="right_user_interface/right_score" method="_on_right_score_zone_body_entered"]
 [connection signal="body_entered" from="left_score_zone" to="left_user_interface/left_score" method="_on_left_score_zone_body_entered"]

@@ -1,15 +1,6 @@
 extends CharacterBody2D
 
 @export var speed = 400
-var rectangle 
-var base_height
-var base_radius
-var target_scale = 5.0
-var base_scale = 1.0
-var scale_speed = 0.1
-
-func _ready() -> void:
-	pass
 
 func getYDir() -> float:
 	return Input.get_action_strength("p_right_down") - Input.get_action_strength("p_right_up")
