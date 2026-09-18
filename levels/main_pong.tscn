@@ -145,6 +145,23 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 136
 
+[node name="restart_message" type="Control" parent="." unique_id=1834212276]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 531.0
+offset_top = 321.0
+offset_right = 571.0
+offset_bottom = 361.0
+
+[node name="press_r" type="Label" parent="restart_message" unique_id=836037169]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -64.0
+offset_right = -24.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("9_i8x3p")
+theme_override_font_sizes/font_size = 20
+
 [node name="right_score_zone" type="Area2D" parent="." unique_id=1122364855]
 position = Vector2(21.000002, 13)
 scale = Vector2(0.40000105, 1.3200004)

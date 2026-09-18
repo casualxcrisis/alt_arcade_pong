@@ -10,6 +10,7 @@ func  inst(pos):
 	
 	
 func _ready() -> void:
+	get_node("%press_r").visible = false
 	get_node("%countdown_numbers").set_text("3")
 	await get_tree().create_timer(1).timeout
 	get_node("%countdown_numbers").set_text("2")
@@ -24,6 +25,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
+		get_node("%press_r").visible = false
 		get_node("%countdown_numbers").visible = true
 		get_node("%countdown_numbers").set_text("3")
 		await get_tree().create_timer(1).timeout
