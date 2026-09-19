@@ -2,6 +2,7 @@ extends Label
 
 var left_score = 0
 
+
 func _ready() -> void:
 	%left_score.set_text("Score: 0")
 	
@@ -14,6 +15,7 @@ func _on_left_score_zone_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		get_node("%press_r").visible = true
 		get_node("%press_r").set_text("Left Player Scores! \nPress 'R' to Re-serve")
+
 	
 	
 	

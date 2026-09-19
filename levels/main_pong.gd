@@ -3,6 +3,7 @@ extends Node2D
 var ball = preload("res://ball/ball.tscn")
 
 
+
 func  inst(pos):
 	var instance = ball.instantiate()
 	instance.position = pos

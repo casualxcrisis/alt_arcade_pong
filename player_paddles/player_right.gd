@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var base_sprite_scale_x = $player_right_sprite.scale.x
 @onready var base_coll_scale_y = $player_right_collision.scale.y
 
-
+var grow_pts = 0
 
 func getYDir() -> float:
 	return Input.get_action_strength("p_right_down") - Input.get_action_strength("p_right_up")
@@ -20,12 +20,18 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("p_right_up"):
 		$AudioStreamPlayer2D.play()
 	elif Input.is_action_just_pressed("grow_right"):
-		$player_right_sprite.scale.y = base_sprite_scale_y * 5
-		$player_right_sprite.scale.x = base_sprite_scale_x * 5
-		$player_right_collision.scale.y = base_coll_scale_y * 5
-	elif Input.is_action_just_released("grow_right"):
-		$player_right_sprite.scale.y = base_sprite_scale_y
-		$player_right_sprite.scale.x = base_sprite_scale_x
-		$player_right_collision.scale.y = base_coll_scale_y	
+		if grow_pts == 2:
+			$player_right_sprite.scale.y = base_sprite_scale_y * 5
+			$player_right_sprite.scale.x = base_sprite_scale_x * 5
+			$player_right_collision.scale.y = base_coll_scale_y * 5
+			await get_tree().create_timer(2).timeout
+			$player_right_sprite.scale.y = base_sprite_scale_y
+			$player_right_sprite.scale.x = base_sprite_scale_x
+			$player_right_collision.scale.y = base_coll_scale_y	
 	move_and_slide()
 	
+
+
+func _on_right_score_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("ball"):
+		grow_pts += 1
