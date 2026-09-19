@@ -9,7 +9,7 @@ extends CharacterBody2D
 var grow_pts = 0
 
 func _ready() -> void:
-	%right_grow_pts.set_text("Grow charge: ")
+	%right_grow_pts.set_text("Grow charge: 0")
 
 func getYDir() -> float:
 	return Input.get_action_strength("p_right_down") - Input.get_action_strength("p_right_up")

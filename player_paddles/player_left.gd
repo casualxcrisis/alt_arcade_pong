@@ -8,6 +8,9 @@ extends CharacterBody2D
 
 var grow_pts = 0
 
+func _ready() -> void:
+	%left_grow_pts.set_text("Grow Charge: 0")
+
 func getYDir() -> float:
 	return Input.get_action_strength("p_left_down") - Input.get_action_strength("p_left_up")
 	
@@ -31,6 +34,8 @@ func _process(_delta: float) -> void:
 			$Sprite2D.scale.x = base_sprite_scale_x
 			$CollisionShape2D.scale.y = base_coll_scale_y
 			grow_pts -= 2
+			var string = var_to_str(grow_pts)
+			%left_grow_pts.set_text("Grow Charge: " + string)
 	move_and_slide()
 
 
@@ -38,3 +43,5 @@ func _process(_delta: float) -> void:
 func _on_left_score_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
 		grow_pts += 1
+		var string = var_to_str(grow_pts)
+		%left_grow_pts.set_text("Grow Charge: " + string)

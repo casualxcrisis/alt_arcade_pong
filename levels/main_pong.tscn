@@ -34,12 +34,14 @@ texture = ExtResource("1_jyf24")
 position = Vector2(116, 256)
 speed = 600
 
-[node name="left_grow_pts" type="Label" parent="player_left" unique_id=949069433]
+[node name="left_grow_pts" type="Label" parent="." unique_id=949069433]
 unique_name_in_owner = true
-offset_left = -11.0
-offset_top = 371.0
-offset_right = 29.0
-offset_bottom = 394.0
+offset_left = 36.0
+offset_top = 63.0
+offset_right = 76.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_i8x3p")
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1037, 255)
@@ -47,11 +49,11 @@ speed = 600
 
 [node name="right_grow_pts" type="Label" parent="." unique_id=2082147458]
 unique_name_in_owner = true
-offset_left = 990.0
-offset_top = 621.0
-offset_right = 1030.0
-offset_bottom = 644.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 1006.0
+offset_top = 67.0
+offset_right = 1046.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_i8x3p")
 
 [node name="top_bottom_wall" parent="." unique_id=477137306 instance=ExtResource("6_8s722")]
@@ -60,7 +62,7 @@ rotation = 1.5696875
 scale = Vector2(1.2560364, 2.5141802)
 
 [node name="top_bottom_wall2" parent="." unique_id=1053510125 instance=ExtResource("6_8s722")]
-position = Vector2(579, 675)
+position = Vector2(579, 745)
 rotation = 1.5696875
 scale = Vector2(1.0709343, 2.482466)
 
