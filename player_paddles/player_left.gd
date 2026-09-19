@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 200
 
 @onready var base_sprite_scale_y = $Sprite2D.scale.y
 @onready var base_sprite_scale_x = $Sprite2D.scale.x
@@ -10,10 +10,11 @@ var grow_pts = 0
 
 func _ready() -> void:
 	%left_grow_pts.set_text("Grow Charge: 0")
+	await get_tree().create_timer(200).timeout
+	speed += 500
 
 func getYDir() -> float:
 	return Input.get_action_strength("p_left_down") - Input.get_action_strength("p_left_up")
-	
 	
 		
 	
@@ -37,6 +38,7 @@ func _process(_delta: float) -> void:
 			var string = var_to_str(grow_pts)
 			%left_grow_pts.set_text("Grow Charge: " + string)
 	move_and_slide()
+		
 
 
 

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cuh8ks1femp5u"]
+
+[ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="1_363ub"]
+[ext_resource type="Script" uid="uid://pi48w13robrn" path="res://levels/left_win.gd" id="1_hljsb"]
+
+[node name="left_win" type="Node2D" unique_id=1682142732]
+script = ExtResource("1_hljsb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=847318736]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8, 16.48)
+color = Color(0, 0, 0, 1)
+
+[node name="game_win_message" type="Label" parent="." unique_id=1531850810]
+offset_left = 54.0
+offset_top = 215.0
+offset_right = 1114.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("1_363ub")
+theme_override_font_sizes/font_size = 62
+text = "Left Player Has the Best Grip!"
+
+[node name="restart" type="Label" parent="." unique_id=485590431]
+offset_left = 483.0
+offset_top = 322.0
+offset_right = 660.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("1_363ub")
+text = "Press \"R\" to Restart"
