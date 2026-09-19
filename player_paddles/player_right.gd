@@ -8,6 +8,9 @@ extends CharacterBody2D
 
 var grow_pts = 0
 
+func _ready() -> void:
+	%right_grow_pts.set_text("Grow charge: ")
+
 func getYDir() -> float:
 	return Input.get_action_strength("p_right_down") - Input.get_action_strength("p_right_up")
 	
@@ -27,7 +30,11 @@ func _process(_delta: float) -> void:
 			await get_tree().create_timer(2).timeout
 			$player_right_sprite.scale.y = base_sprite_scale_y
 			$player_right_sprite.scale.x = base_sprite_scale_x
-			$player_right_collision.scale.y = base_coll_scale_y	
+			$player_right_collision.scale.y = base_coll_scale_y
+			grow_pts -= 2
+			var string = var_to_str(grow_pts)
+			%right_grow_pts.set_text("Grow Charge: " + string)
+	
 	move_and_slide()
 	
 
@@ -35,3 +42,5 @@ func _process(_delta: float) -> void:
 func _on_right_score_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
 		grow_pts += 1
+		var string = var_to_str(grow_pts)
+		%right_grow_pts.set_text("Grow Charge: " + string)
