@@ -24,6 +24,7 @@ window/stretch/aspect="expand"
 
 ball=""
 paddles=""
+top_bottom_walls=""
 
 [input]
 

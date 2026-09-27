@@ -62,7 +62,7 @@ rotation = 1.5696875
 scale = Vector2(1.2560364, 2.5141802)
 
 [node name="top_bottom_wall2" parent="." unique_id=1053510125 instance=ExtResource("6_8s722")]
-position = Vector2(579, 674)
+position = Vector2(579, 694.99994)
 rotation = 1.5696875
 scale = Vector2(1.0709343, 2.482466)
 
