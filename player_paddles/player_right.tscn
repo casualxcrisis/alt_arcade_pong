@@ -31,6 +31,8 @@ texture = ExtResource("2_0twtq")
 stream = ExtResource("3_0twtq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1495578890 groups=["paddles"]]
+position = Vector2(-0.99999994, 3)
+scale = Vector2(0.80000085, 0.92000014)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1484963402]
 position = Vector2(0, 36)

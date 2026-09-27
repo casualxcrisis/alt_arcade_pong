@@ -45,7 +45,6 @@ theme_override_fonts/font = ExtResource("9_i8x3p")
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1037, 255)
-speed = 600
 
 [node name="right_grow_pts" type="Label" parent="." unique_id=2082147458]
 unique_name_in_owner = true
@@ -62,7 +61,7 @@ rotation = 1.5696875
 scale = Vector2(1.2560364, 2.5141802)
 
 [node name="top_bottom_wall2" parent="." unique_id=1053510125 instance=ExtResource("6_8s722")]
-position = Vector2(579, 694.99994)
+position = Vector2(579, 673)
 rotation = 1.5696875
 scale = Vector2(1.0709343, 2.482466)
 

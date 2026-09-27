@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 700
+@export var acceleration = 2000
 
 @onready var base_sprite_scale_y = $player_right_sprite.scale.y
 @onready var base_sprite_scale_x = $player_right_sprite.scale.x
@@ -19,7 +20,7 @@ func getYDir() -> float:
 	
 func _process(_delta: float) -> void:
 	var dir :Vector2=Vector2(0, getYDir())
-	velocity = dir * speed
+	velocity = velocity.move_toward(dir * speed, _delta * acceleration)
 	if Input.is_action_just_pressed("p_right_down"):
 		$AudioStreamPlayer2D.play()
 	elif Input.is_action_just_pressed("p_right_up"):

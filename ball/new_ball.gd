@@ -4,8 +4,8 @@ extends RigidBody2D
 var ball_serve_speed: Array[int] = [6, 7, 8, 9, 10, -6, -7. -8, -9, -10]
 #sets serve angle
 var serve_angle: Array[int] = [1, 2, 3, -1, -2, -3] 
-#sets velocities for volleys
-var velocity_array: Array[float] = [6.0, 7.0, 8.0, 9.0, 10.0, -6.0, -7.0, -8.0, -9.0, -10.0]
+#sets speed for volleys
+var velocity_array: Array[int] = [6, 7, 8, 9, 10, -6, -7, -8, -9, -10]
 
 func _ready() -> void:
 	linear_velocity = Vector2(ball_serve_speed.pick_random(), serve_angle.pick_random())
