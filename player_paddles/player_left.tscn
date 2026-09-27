@@ -7,6 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjlhb"]
 size = Vector2(20, 27.826649)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc5ad"]
+
 [node name="player_left" type="CharacterBody2D" unique_id=1713023521]
 collision_layer = 3
 collision_mask = 3
@@ -26,3 +28,11 @@ texture = ExtResource("2_gpa8s")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=437584484]
 stream = ExtResource("3_gpa8s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1560582137 groups=["paddles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1993197168]
+position = Vector2(-2.3841858e-07, 35)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_sc5ad")
+debug_color = Color(0.8038818, 0.40952772, 0.2302165, 0.41960785)

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var base_sprite_scale_x = $Sprite2D.scale.x
 @onready var base_coll_scale_y = $CollisionShape2D.scale.y
 
+
 var grow_pts = 0
 
 func _ready() -> void:

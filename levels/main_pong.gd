@@ -1,6 +1,6 @@
 extends Node2D
 
-var ball = preload("res://ball/ball.tscn")
+var ball = preload("res://ball/new_ball.tscn")
 
 
 
