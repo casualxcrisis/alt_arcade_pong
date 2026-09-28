@@ -202,6 +202,24 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sc5ad"]
 
+[sub_resource type="Curve" id="Curve_ikfnc"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 303.37085), 0.0, 0.0, 0, 0, Vector2(0.4734043, -44.494385), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_553jg"]
+_data = [Vector2(0, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.5265958, 0.43820232), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ikfnc"]
+offsets = PackedFloat32Array(0.024691358, 0.2654321, 0.5617284, 1)
+colors = PackedColorArray(0.9259259, 0.9259259, 0.9259259, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_gu8tq"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="new_ball" type="RigidBody2D" unique_id=2084979031 groups=["ball"]]
 script = ExtResource("1_553jg")
 
@@ -214,9 +232,8 @@ unique_name_in_owner = true
 position = Vector2(0, 2)
 scale = Vector2(4.3199997, 4.3199997)
 sprite_frames = SubResource("SpriteFrames_0yd1l")
-animation = &"idle"
-frame = 3
-frame_progress = 0.53503925
+animation = &"ball_birth"
+frame_progress = 0.20452647
 
 [node name="velocity_setter" type="Area2D" parent="." unique_id=2048576938]
 
@@ -224,5 +241,43 @@ frame_progress = 0.53503925
 scale = Vector2(4.880433, 4.880433)
 shape = SubResource("CircleShape2D_sc5ad")
 debug_color = Color(0.9087225, 0.28392288, 0.25854924, 0.41960785)
+
+[node name="particles" type="Node2D" parent="." unique_id=1377313930]
+
+[node name="paddle_hit" type="CPUParticles2D" parent="particles" unique_id=1394761677]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 534.75
+angle_curve = SubResource("Curve_ikfnc")
+scale_amount_min = 5.0
+scale_amount_max = 8.0
+color = Color(1, 0.5910897, 0.28496692, 1)
+
+[node name="score_splosion" type="CPUParticles2D" parent="particles" unique_id=956783358]
+unique_name_in_owner = true
+scale = Vector2(6.6000013, 6.6000013)
+emitting = false
+amount = 60
+lifetime = 0.83
+one_shot = true
+explosiveness = 0.8
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_min = 10.0
+scale_amount_max = 30.0
+scale_amount_curve = SubResource("Curve_553jg")
+color = Color(0.7529412, 0.34901962, 0, 1)
+color_initial_ramp = SubResource("Gradient_ikfnc")
+hue_variation_curve = SubResource("Curve_gu8tq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=601083772]
 
 [connection signal="area_entered" from="velocity_setter" to="." method="_on_velocity_setter_area_entered"]

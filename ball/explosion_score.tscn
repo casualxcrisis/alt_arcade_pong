@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bac5vfp6um54c"]
+
+[sub_resource type="Curve" id="Curve_kps3k"]
+_data = [Vector2(0, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.5265958, 0.43820232), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_crplj"]
+offsets = PackedFloat32Array(0.024691358, 0.2654321, 0.5617284, 1)
+colors = PackedColorArray(0.9259259, 0.9259259, 0.9259259, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_cu4ke"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="explosion_score" type="Node2D" unique_id=117667192]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1040820650]
+emitting = false
+amount = 60
+lifetime = 0.83
+one_shot = true
+explosiveness = 0.8
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_kps3k")
+color = Color(0.7529412, 0.34901962, 0, 1)
+color_initial_ramp = SubResource("Gradient_crplj")
+hue_variation_curve = SubResource("Curve_cu4ke")

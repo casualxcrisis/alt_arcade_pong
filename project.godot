@@ -25,6 +25,7 @@ window/stretch/aspect="expand"
 ball=""
 paddles=""
 top_bottom_walls=""
+score_zone=""
 
 [input]
 
