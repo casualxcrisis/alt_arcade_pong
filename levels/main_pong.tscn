@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dkb15ybe6rjdl" path="res://background_images/ufc_type_arena.jpg" id="1_jyf24"]
 [ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
-[ext_resource type="AudioStream" uid="uid://drydtx8ncynb1" path="res://music/DavidKBD - Pink Bloom Pack - 01 - Pink Bloom.ogg" id="8_jyf24"]
+[ext_resource type="AudioStream" uid="uid://ci8d66jx1py4j" path="res://sound_effects/crowd_loop.wav" id="7_i8x3p"]
 [ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="9_i8x3p"]
 [ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
 [ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
@@ -18,6 +18,8 @@ size = Vector2(20, 658)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc5ad"]
 size = Vector2(3.25, 641.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu4ke"]
 
 [node name="main_pong" type="Node2D" unique_id=238374251]
 script = ExtResource("1_jfxgk")
@@ -75,11 +77,11 @@ position = Vector2(1179.9999, 409.00003)
 rotation = 0.00073194504
 scale = Vector2(1.0709343, 2.482466)
 
-[node name="background_music" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
-stream = ExtResource("8_jyf24")
+[node name="background_crowd" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
+unique_name_in_owner = true
+stream = ExtResource("7_i8x3p")
 volume_db = -7.299
 autoplay = true
-parameters/looping = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=716771288]
 collision_layer = 2
@@ -194,6 +196,23 @@ position = Vector2(2, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_score_zone" unique_id=971392166]
 position = Vector2(1148.625, 323.75)
 shape = SubResource("RectangleShape2D_sc5ad")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=925215849 groups=["score_zone"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=628921415]
+position = Vector2(19, 247.00002)
+scale = Vector2(0.7847104, 43.907078)
+shape = SubResource("RectangleShape2D_cu4ke")
+debug_color = Color(0.8605871, 0.33920938, 0.34204915, 0.41960785)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1098790740 groups=["score_zone"]]
+position = Vector2(1119, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=359562651]
+position = Vector2(19, 247.00002)
+scale = Vector2(0.7847104, 43.907078)
+shape = SubResource("RectangleShape2D_cu4ke")
+debug_color = Color(0.8605871, 0.33920938, 0.34204915, 0.41960785)
 
 [connection signal="body_entered" from="right_score_zone" to="." method="_on_right_score_zone_body_entered"]
 [connection signal="body_entered" from="right_score_zone" to="player_left" method="_on_right_score_zone_body_entered"]

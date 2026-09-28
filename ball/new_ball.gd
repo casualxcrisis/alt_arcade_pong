@@ -30,4 +30,10 @@ func _physics_process(_delta: float) -> void:
 func _on_velocity_setter_area_entered(area: Area2D) -> void:
 	if area.is_in_group("paddles"):
 		set_linear_velocity(Vector2(velocity_array.pick_random(), velocity_array.pick_random()))
+		%paddle_sound.play()
 		%paddle_hit.emitting = true
+	elif area.is_in_group("score_zone"):
+		%death_sound.play()
+		%new_ball.visible = false
+		%score_splosion.emitting = true
+		

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ddojforgj82om" path="res://ball/Sheets/Creation-Sheet.png" id="1_dtvr0"]
 [ext_resource type="Texture2D" uid="uid://c0i7vi46sxwf7" path="res://ball/Sheets/IdleLoop-Sheet.png" id="2_553jg"]
 [ext_resource type="Texture2D" uid="uid://cxs5tmp2xpnnk" path="res://ball/Sheets/Explode-Sheet.png" id="3_ikfnc"]
+[ext_resource type="AudioStream" uid="uid://cmiisxc76wqrx" path="res://sound_effects/573376__johnloser__cyber-punch-01.wav" id="5_gu8tq"]
+[ext_resource type="AudioStream" uid="uid://c1xbxalo713xm" path="res://sound_effects/317767__jalastram__sfx_explosion_14.wav" id="5_ikfnc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yd1l"]
 
@@ -233,7 +235,7 @@ position = Vector2(0, 2)
 scale = Vector2(4.3199997, 4.3199997)
 sprite_frames = SubResource("SpriteFrames_0yd1l")
 animation = &"ball_birth"
-frame_progress = 0.20452647
+frame_progress = 0.23456347
 
 [node name="velocity_setter" type="Area2D" parent="." unique_id=2048576938]
 
@@ -278,6 +280,13 @@ color = Color(0.7529412, 0.34901962, 0, 1)
 color_initial_ramp = SubResource("Gradient_ikfnc")
 hue_variation_curve = SubResource("Curve_gu8tq")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=601083772]
+[node name="paddle_sound" type="AudioStreamPlayer2D" parent="." unique_id=601083772]
+unique_name_in_owner = true
+stream = ExtResource("5_gu8tq")
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="." unique_id=1987513423]
+unique_name_in_owner = true
+stream = ExtResource("5_ikfnc")
+volume_db = -10.07
 
 [connection signal="area_entered" from="velocity_setter" to="." method="_on_velocity_setter_area_entered"]
