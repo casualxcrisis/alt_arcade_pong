@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkjhek8832yaq" path="res://player_paddles/player_right.gd" id="1_sv5yc"]
 [ext_resource type="Texture2D" uid="uid://betljdv0m3gc3" path="res://player_paddles/clenched_fist.png" id="2_0twtq"]
 [ext_resource type="AudioStream" uid="uid://bpxcxj0q38src" path="res://sound_effects/male_hoo_grunt.wav" id="3_0twtq"]
+[ext_resource type="AudioStream" uid="uid://dab4xapeomfxc" path="res://sound_effects/male_heave_strain.wav" id="4_uhp84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80648"]
 size = Vector2(20, 26.991718)
@@ -39,3 +40,7 @@ position = Vector2(0, 36)
 scale = Vector2(-3.176117, -3.2746081)
 shape = SubResource("RectangleShape2D_0yd1l")
 debug_color = Color(0.8520172, 0.36572856, 0.17665857, 0.41960785)
+
+[node name="grow_noise" type="AudioStreamPlayer2D" parent="." unique_id=1593372210]
+unique_name_in_owner = true
+stream = ExtResource("4_uhp84")

@@ -29,6 +29,7 @@ func _process(_delta: float) -> void:
 		$AudioStreamPlayer2D.play()		
 	elif Input.is_action_just_pressed("grow"):
 		if grow_pts == 2:
+			%grow_noise.play()
 			$Sprite2D.scale.y = base_sprite_scale_y * 5
 			$Sprite2D.scale.x = base_sprite_scale_x * 5
 			$CollisionShape2D.scale.y = base_coll_scale_y * 5
