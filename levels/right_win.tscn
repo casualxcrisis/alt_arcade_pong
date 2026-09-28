@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btr8yjnqg6fcy" path="res://levels/right_win.gd" id="1_wisc3"]
 [ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="2_v0617"]
+[ext_resource type="AudioStream" uid="uid://cac4okipmjxmu" path="res://music/843046__silverillusionist__victory-fanfare-8-bit-thunder-4.wav" id="3_v0617"]
 
 [node name="right_win" type="Node2D" unique_id=441643794]
 script = ExtResource("1_wisc3")
@@ -28,3 +29,7 @@ offset_right = 660.0
 offset_bottom = 355.0
 theme_override_fonts/font = ExtResource("2_v0617")
 text = "Press \"R\" to Restart"
+
+[node name="victory_music" type="AudioStreamPlayer2D" parent="." unique_id=1161509931]
+unique_name_in_owner = true
+stream = ExtResource("3_v0617")
