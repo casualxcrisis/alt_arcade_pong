@@ -1,8 +1,12 @@
 Resources and Assets Used:
 - Main level background image: https://qaqooking.wiki/all/how-to/fighting-arena-background
-- Music: Pink Bloom from https://davidkbd.itch.io/pink-bloom-synthwave-music-pack 
+- Menu Music: Pink Bloom from https://davidkbd.itch.io/pink-bloom-synthwave-music-pack 
 - Grunting sound effect: https://freesound.org/people/dersuperanton/sounds/437653/
 - Grunting sound effect: https://freesound.org/people/unfa/sounds/245599/
 - Font: https://ninjikin.itch.io/a-font-for-the-future-that-never-existed-80s-retro-future-font
 - Hand Image: https://www.vecteezy.com/png/54587419-pointing-hand-gesture
 - Fireball: https://msfrantz.itch.io/free-fire-ball-pixel-art
+- Victory Music: https://freesound.org/people/SilverIllusionist/sounds/843046/
+- Crowd Noise: https://freesound.org/people/GregorQuendel/sounds/481782/
+- Punch Noise: https://freesound.org/people/JohnLoser/sounds/573376/
+- Explosion: https://freesound.org/people/jalastram/sounds/317767/
