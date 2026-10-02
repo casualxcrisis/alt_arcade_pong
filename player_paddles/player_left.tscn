@@ -16,12 +16,14 @@ collision_mask = 3
 script = ExtResource("1_201oy")
 
 [node name="player_left_collision" type="CollisionShape2D" parent="." unique_id=1003646311]
+unique_name_in_owner = true
 position = Vector2(-1.0083877, 36.497772)
 rotation = 0.0022085414
 scale = Vector2(2.400527, 2.1202648)
 shape = SubResource("RectangleShape2D_wjlhb")
 
 [node name="player_left_sprite" type="Sprite2D" parent="." unique_id=723086802]
+unique_name_in_owner = true
 position = Vector2(-1, 37.000004)
 rotation = -1.5773612
 scale = Vector2(0.0204288, 0.018619414)
