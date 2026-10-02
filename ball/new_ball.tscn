@@ -260,6 +260,21 @@ scale_amount_min = 5.0
 scale_amount_max = 8.0
 color = Color(1, 0.5910897, 0.28496692, 1)
 
+[node name="paddle_hit_right" type="CPUParticles2D" parent="particles" unique_id=1539838295]
+unique_name_in_owner = true
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_max = 534.75
+angle_curve = SubResource("Curve_ikfnc")
+scale_amount_min = 5.0
+scale_amount_max = 8.0
+color = Color(1, 0.5910897, 0.28496692, 1)
+
 [node name="score_splosion" type="CPUParticles2D" parent="particles" unique_id=956783358]
 unique_name_in_owner = true
 scale = Vector2(6.6000013, 6.6000013)

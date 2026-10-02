@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
 [ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7mw5"]
+size = Vector2(51.18, 336.44)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kps3k"]
 size = Vector2(20, 662)
 
@@ -62,20 +65,24 @@ position = Vector2(579, -29)
 rotation = 1.5696875
 scale = Vector2(1.2560364, 2.5141802)
 
+[node name="Area2D" type="Area2D" parent="top_bottom_wall" unique_id=149982243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_bottom_wall/Area2D" unique_id=405040042]
+shape = SubResource("RectangleShape2D_u7mw5")
+debug_color = Color(0.9024276, 0.27915984, 0.3521268, 0.41960785)
+
 [node name="top_bottom_wall2" parent="." unique_id=1053510125 instance=ExtResource("6_8s722")]
 position = Vector2(579, 673)
 rotation = 1.5696875
 scale = Vector2(1.0709343, 2.482466)
 
-[node name="top_bottom_wall3" parent="." unique_id=1443852664 instance=ExtResource("6_8s722")]
-position = Vector2(-24.000004, 409.00003)
-rotation = 0.00073194504
-scale = Vector2(1.0709343, 2.482466)
+[node name="Area2D3" type="Area2D" parent="top_bottom_wall2" unique_id=1075371019 groups=["top_bottom_walls"]]
+position = Vector2(2.8023071, -0.40149146)
+scale = Vector2(1.1728415, 1.0127752)
 
-[node name="top_bottom_wall4" parent="." unique_id=1350244682 instance=ExtResource("6_8s722")]
-position = Vector2(1179.9999, 409.00003)
-rotation = 0.00073194504
-scale = Vector2(1.0709343, 2.482466)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_bottom_wall2/Area2D3" unique_id=1760111708]
+shape = SubResource("RectangleShape2D_u7mw5")
+debug_color = Color(0.9024276, 0.27915984, 0.3521268, 0.41960785)
 
 [node name="background_crowd" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
 unique_name_in_owner = true

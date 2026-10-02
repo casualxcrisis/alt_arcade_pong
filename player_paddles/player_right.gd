@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var base_sprite_scale_y = $player_right_sprite.scale.y
 @onready var base_sprite_scale_x = $player_right_sprite.scale.x
 @onready var base_coll_scale_y = $player_right_collision.scale.y
+@onready var base_vel_setter_y = $vel_setter.scale.y
+@onready var base_vel_setter_coll_y = $%vel_setter_col.scale.y
 
 var grow_pts = 0
 
@@ -31,10 +33,14 @@ func _process(_delta: float) -> void:
 			$player_right_sprite.scale.y = base_sprite_scale_y * 5
 			$player_right_sprite.scale.x = base_sprite_scale_x * 5
 			$player_right_collision.scale.y = base_coll_scale_y * 5
+			$%vel_setter.scale.y = base_vel_setter_y * 5
+			$%vel_setter_col.scale.y = base_vel_setter_coll_y * 5
 			await get_tree().create_timer(2).timeout
 			$player_right_sprite.scale.y = base_sprite_scale_y
 			$player_right_sprite.scale.x = base_sprite_scale_x
 			$player_right_collision.scale.y = base_coll_scale_y
+			$%vel_setter.scale.y = base_vel_setter_y
+			$%vel_setter_col.scale.y = base_vel_setter_coll_y
 			grow_pts -= 2
 			var string = var_to_str(grow_pts)
 			%right_grow_pts.set_text("Grow Charge: " + string)

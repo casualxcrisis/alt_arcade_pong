@@ -3,9 +3,12 @@ extends CharacterBody2D
 @export var speed = 700
 @export var acceleration = 2000
 
-@onready var base_sprite_scale_y = $Sprite2D.scale.y
-@onready var base_sprite_scale_x = $Sprite2D.scale.x
-@onready var base_coll_scale_y = $CollisionShape2D.scale.y
+@onready var base_sprite_scale_y = $player_left_sprite.scale.y
+@onready var base_sprite_scale_x = $player_left_sprite.scale.x
+@onready var base_coll_scale_y = $player_left_collision.scale.y
+@onready var base_vel_setter_y = %vel_setter.scale.y
+@onready var base_vel_setter_coll_y = $%vel_setter_col.scale.y
+
 
 
 var grow_pts = 0
@@ -30,13 +33,17 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("grow"):
 		if grow_pts == 2:
 			%grow_noise.play()
-			$Sprite2D.scale.y = base_sprite_scale_y * 5
-			$Sprite2D.scale.x = base_sprite_scale_x * 5
-			$CollisionShape2D.scale.y = base_coll_scale_y * 5
+			$player_left_sprite.scale.y = base_sprite_scale_y * 5
+			$player_left_sprite.scale.x = base_sprite_scale_x * 5
+			$player_left_collision.scale.y = base_coll_scale_y * 5
+			$vel_setter.scale.y = base_vel_setter_y * 5
+			$%vel_setter_col.scale.y = base_vel_setter_coll_y * 5
 			await get_tree().create_timer(2).timeout
-			$Sprite2D.scale.y = base_sprite_scale_y
-			$Sprite2D.scale.x = base_sprite_scale_x
-			$CollisionShape2D.scale.y = base_coll_scale_y
+			$player_left_sprite.scale.y = base_sprite_scale_y
+			$player_left_sprite.scale.x = base_sprite_scale_x
+			$player_left_collision.scale.y = base_coll_scale_y
+			$vel_setter.scale.y = base_vel_setter_y
+			$%vel_setter_col.scale.y = base_vel_setter_coll_y
 			grow_pts -= 2
 			var string = var_to_str(grow_pts)
 			%left_grow_pts.set_text("Grow Charge: " + string)
