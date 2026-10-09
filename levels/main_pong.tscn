@@ -127,9 +127,9 @@ script = ExtResource("10_jfxgk")
 [node name="right_user_interface" type="Control" parent="." unique_id=727371450]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1028.0
+offset_left = 1003.0
 offset_top = 31.0
-offset_right = 1068.0
+offset_right = 1043.0
 offset_bottom = 71.0
 
 [node name="right_score" type="Label" parent="right_user_interface" unique_id=543239511 groups=["labels"]]

@@ -5,7 +5,8 @@ var ball_serve_speed: Array[int] = [6, 7, 8, 9, 10, -6, -7. -8, -9, -10]
 #sets serve angle
 var serve_angle: Array[int] = [1, 2, 3, -1, -2, -3] 
 #sets speed for volleys
-var velocity_array: Array[int] = [6, 7, 8, 9, 10, -6, -7, -8, -9, -10]
+var velocity_array_pos: Array[int] = [6, 7, 8, 9, 10]
+var velocity_array_neg: Array[int] = [-6, -7, -8, -9, -10]
 var wall_vel_pos: Array[int] = [6, 7, 8, 9, 10]
 var wall_vel_neg: Array[int] = [-6, -7, -8, -9, -10]
 var current_lin_vel_y  = linear_velocity.y
@@ -32,11 +33,11 @@ func _physics_process(_delta: float) -> void:
 
 func _on_velocity_setter_area_entered(area: Area2D) -> void:
 	if area.is_in_group("paddle_right"):
-		set_linear_velocity(Vector2(velocity_array.pick_random(), velocity_array.pick_random()))
+		set_linear_velocity(Vector2(velocity_array_neg.pick_random(), velocity_array_neg.pick_random()))
 		%paddle_sound.play()
 		%paddle_hit_right.emitting = true
 	elif area.is_in_group("paddle_left"):
-		set_linear_velocity(Vector2(velocity_array.pick_random(), velocity_array.pick_random()))
+		set_linear_velocity(Vector2(velocity_array_pos.pick_random(), velocity_array_pos.pick_random()))
 		%paddle_sound.play()
 		%paddle_hit.emitting = true
 	elif area.is_in_group("score_zone"):
