@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://n0p3ufssercm"]
 
-[ext_resource type="Script" uid="uid://cx7likcn4qrfg" path="res://levels/main_menu.gd" id="1_80kw5"]
 [ext_resource type="Texture2D" uid="uid://cgbobp01rdu2x" path="res://background_images/space_bckgrnd.jpg" id="2_jt0ep"]
-[ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="3_pwfob"]
+[ext_resource type="Script" uid="uid://c88jk75dlrsaj" path="res://levels/languages.gd" id="3_jt0ep"]
+[ext_resource type="Script" uid="uid://dmqmbrnxctt56" path="res://levels/dys_on.gd" id="4_h5eox"]
+[ext_resource type="Script" uid="uid://tyajymity2w2" path="res://levels/back.gd" id="4_jt0ep"]
 [ext_resource type="AudioStream" uid="uid://drydtx8ncynb1" path="res://music/DavidKBD - Pink Bloom Pack - 01 - Pink Bloom.ogg" id="4_wnmni"]
+[ext_resource type="Script" uid="uid://dphievkhuptsv" path="res://levels/title.gd" id="5_pwfob"]
+[ext_resource type="Script" uid="uid://bb8kdm21at1ly" path="res://levels/dys_off.gd" id="5_xlbx4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc5ad"]
 texture = ExtResource("2_jt0ep")
@@ -13,7 +16,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_80kw5")
 
 [node name="menu_image" type="Panel" parent="." unique_id=902419789]
 layout_mode = 0
@@ -23,58 +25,67 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_sc5ad")
 
 [node name="menu_buttons" type="VBoxContainer" parent="." unique_id=1753286266]
 layout_mode = 0
-offset_left = 411.0
+offset_left = 385.0
 offset_top = 506.0
-offset_right = 811.0
+offset_right = 785.0
 offset_bottom = 582.0
 
-[node name="back" type="Button" parent="menu_buttons" unique_id=1059831122]
+[node name="back" type="Button" parent="menu_buttons" unique_id=1059831122 groups=["labels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.10980392, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_pwfob")
 theme_override_font_sizes/font_size = 31
 text = "BACK"
+script = ExtResource("4_jt0ep")
 
-[node name="localization_settings" type="VBoxContainer" parent="." unique_id=1978659085]
+[node name="change_font" type="VBoxContainer" parent="." unique_id=1978659085]
 layout_mode = 0
-offset_left = 411.0
-offset_top = 200.0
-offset_right = 811.0
-offset_bottom = 276.0
+offset_left = 358.0
+offset_top = 225.0
+offset_right = 803.0
+offset_bottom = 423.0
 
-[node name="Label" type="Label" parent="localization_settings" unique_id=1602809103]
+[node name="languages" type="Label" parent="change_font" unique_id=1602809103 groups=["labels"]]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.10980392, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_constants/shadow_offset_y = 6
-theme_override_fonts/font = ExtResource("3_pwfob")
 theme_override_font_sizes/font_size = 43
-text = "LANGUAGES"
+text = "LANGAUGE"
 horizontal_alignment = 1
+script = ExtResource("3_jt0ep")
 
-[node name="french" type="Button" parent="localization_settings" unique_id=1484992871]
+[node name="dys_font" type="Label" parent="change_font" unique_id=1949645012]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.10980392, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_pwfob")
-theme_override_font_sizes/font_size = 31
-text = "Francais"
+theme_override_font_sizes/font_size = 38
+text = "Enable Dyslexia Font"
 
-[node name="spanish" type="Button" parent="localization_settings" unique_id=1810678627]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.10980392, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_pwfob")
-theme_override_font_sizes/font_size = 31
-text = "Espanol"
+[node name="dys_on" type="Button" parent="change_font/dys_font" unique_id=1525219309]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 77.0
+offset_right = 167.0
+offset_bottom = 130.0
+theme_override_colors/font_pressed_color = Color(0.32562503, 0.83878, 3.080368e-06, 1)
+theme_override_colors/font_hover_color = Color(0.5129652, 0.96060663, 0.39420888, 1)
+theme_override_font_sizes/font_size = 39
+text = "On"
+script = ExtResource("4_h5eox")
 
-[node name="italian" type="Button" parent="localization_settings" unique_id=452526440]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.10980392, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_pwfob")
-theme_override_font_sizes/font_size = 31
-text = "Italia"
+[node name="dys_off" type="Button" parent="change_font/dys_font" unique_id=1740110259]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 77.0
+offset_right = 370.0
+offset_bottom = 130.0
+theme_override_colors/font_pressed_color = Color(0.98683447, 0.031840127, 1.1551381e-06, 1)
+theme_override_colors/font_hover_color = Color(0.7262992, 0.067675516, 0.11305343, 1)
+theme_override_font_sizes/font_size = 35
+text = "Off"
+script = ExtResource("5_xlbx4")
 
-[node name="title" type="Label" parent="." unique_id=310373898]
+[node name="title" type="Label" parent="." unique_id=310373898 groups=["labels"]]
 layout_mode = 0
 offset_left = 114.0
 offset_top = 3.0
@@ -84,10 +95,14 @@ theme_override_colors/font_color = Color(0.9550682, 0.00087155163, 0.97412974, 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 9
 theme_override_constants/shadow_offset_y = 16
-theme_override_fonts/font = ExtResource("3_pwfob")
 theme_override_font_sizes/font_size = 129
 text = "Gripper Pong"
+script = ExtResource("5_pwfob")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2114109711]
 unique_name_in_owner = true
 stream = ExtResource("4_wnmni")
+
+[connection signal="pressed" from="menu_buttons/back" to="menu_buttons/back" method="_on_pressed"]
+[connection signal="pressed" from="change_font/dys_font/dys_on" to="change_font/dys_font/dys_on" method="_on_pressed"]
+[connection signal="pressed" from="change_font/dys_font/dys_off" to="change_font/dys_font/dys_off" method="_on_pressed"]

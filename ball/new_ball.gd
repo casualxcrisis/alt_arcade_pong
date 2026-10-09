@@ -6,6 +6,9 @@ var ball_serve_speed: Array[int] = [6, 7, 8, 9, 10, -6, -7. -8, -9, -10]
 var serve_angle: Array[int] = [1, 2, 3, -1, -2, -3] 
 #sets speed for volleys
 var velocity_array: Array[int] = [6, 7, 8, 9, 10, -6, -7, -8, -9, -10]
+var wall_vel_pos: Array[int] = [6, 7, 8, 9, 10]
+var wall_vel_neg: Array[int] = [-6, -7, -8, -9, -10]
+var current_lin_vel_y  = linear_velocity.y
 
 func _ready() -> void:
 	set_gravity_scale(0.0) #set gravity to zero so it's a floating ball effect
@@ -40,4 +43,10 @@ func _on_velocity_setter_area_entered(area: Area2D) -> void:
 		%death_sound.play()
 		%new_ball.visible = false
 		%score_splosion.emitting = true
-		
+	
+	# fixes "air hockey" slow down
+	if area.is_in_group("top_bottom_walls"):
+		if linear_velocity.x > 0:
+			set_linear_velocity(Vector2(wall_vel_pos.pick_random(), wall_vel_pos.pick_random()))
+		elif linear_velocity.x < 0:
+			set_linear_velocity(Vector2(wall_vel_neg.pick_random(), wall_vel_neg.pick_random()))

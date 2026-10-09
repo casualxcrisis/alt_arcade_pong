@@ -18,6 +18,14 @@ func _on_left_score_zone_body_entered(body: Node2D) -> void:
 		get_node("%press_r").set_text("Left Player Scores! \nPress 'R' to Re-serve")
 		
 func _process(delta: float) -> void:
+	if Globals.set_dys_font:
+		add_theme_font_override("font", Globals.dys_font)
+		add_theme_font_size_override("font_size", 22)
+	else:
+		add_theme_font_override("font", Globals.default_font)
+		add_theme_font_size_override("font_size", 35)
+	
+	
 	if left_score == 8:
 		get_tree().change_scene_to_file("res://levels/left_win.tscn")
 

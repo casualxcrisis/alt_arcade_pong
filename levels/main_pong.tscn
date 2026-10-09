@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
 [ext_resource type="AudioStream" uid="uid://ci8d66jx1py4j" path="res://sound_effects/crowd_loop.wav" id="7_i8x3p"]
-[ext_resource type="FontFile" uid="uid://2j2nqbnyu0g1" path="res://font/80s-retro-future.ttf" id="9_i8x3p"]
 [ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
 [ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
 
@@ -46,7 +45,6 @@ offset_top = 63.0
 offset_right = 76.0
 offset_bottom = 86.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("9_i8x3p")
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1037, 255)
@@ -58,14 +56,13 @@ offset_top = 67.0
 offset_right = 1046.0
 offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("9_i8x3p")
 
 [node name="top_bottom_wall" parent="." unique_id=477137306 instance=ExtResource("6_8s722")]
 position = Vector2(579, -29)
 rotation = 1.5696875
 scale = Vector2(1.2560364, 2.5141802)
 
-[node name="Area2D" type="Area2D" parent="top_bottom_wall" unique_id=149982243]
+[node name="Area2D" type="Area2D" parent="top_bottom_wall" unique_id=149982243 groups=["top_bottom_walls"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_bottom_wall/Area2D" unique_id=405040042]
 shape = SubResource("RectangleShape2D_u7mw5")
@@ -117,14 +114,13 @@ offset_right = 23.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="left_score" type="Label" parent="left_user_interface" unique_id=432354885]
+[node name="left_score" type="Label" parent="left_user_interface" unique_id=432354885 groups=["labels"]]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 39.0
 offset_top = 33.0
 offset_right = 174.0
 offset_bottom = 69.0
-theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 30
 script = ExtResource("10_jfxgk")
 
@@ -136,13 +132,12 @@ offset_top = 31.0
 offset_right = 1068.0
 offset_bottom = 71.0
 
-[node name="right_score" type="Label" parent="right_user_interface" unique_id=543239511]
+[node name="right_score" type="Label" parent="right_user_interface" unique_id=543239511 groups=["labels"]]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -21.0
 offset_right = 114.0
 offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 30
 script = ExtResource("9_jfxgk")
 
@@ -154,7 +149,7 @@ offset_top = 275.0
 offset_right = 584.0
 offset_bottom = 315.0
 
-[node name="countdown_numbers" type="Label" parent="countdown" unique_id=254333376]
+[node name="countdown_numbers" type="Label" parent="countdown" unique_id=254333376 groups=["labels"]]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -168,7 +163,6 @@ offset_right = 20.0
 offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 136
 
 [node name="restart_message" type="Control" parent="." unique_id=1834212276]
@@ -179,13 +173,12 @@ offset_top = 321.0
 offset_right = 571.0
 offset_bottom = 361.0
 
-[node name="press_r" type="Label" parent="restart_message" unique_id=836037169]
+[node name="press_r" type="Label" parent="restart_message" unique_id=836037169 groups=["labels"]]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -64.0
 offset_right = -24.0
 offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("9_i8x3p")
 theme_override_font_sizes/font_size = 20
 
 [node name="right_score_zone" type="Area2D" parent="." unique_id=1122364855]

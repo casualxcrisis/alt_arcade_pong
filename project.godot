@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="gripper_pong"
 run/main_scene="uid://c28iejjd42ku1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*uid://bino2g2bqpldd"
 
 [display]
 
@@ -28,6 +31,12 @@ score_zone=""
 paddles=""
 paddle_right=""
 paddle_left=""
+labels=""
+
+[gui]
+
+theme/custom="uid://co6cnsq7y5tef"
+theme/name="gripper_pong"
 
 [input]
 
