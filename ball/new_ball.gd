@@ -42,6 +42,7 @@ func _on_velocity_setter_area_entered(area: Area2D) -> void:
 		%paddle_hit.emitting = true
 	elif area.is_in_group("score_zone"):
 		%death_sound.play()
+		%crowd_pop.play()
 		%new_ball.visible = false
 		%score_splosion.emitting = true
 	

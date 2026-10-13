@@ -4,10 +4,16 @@
 [ext_resource type="Script" uid="uid://bl4jlmjhov2ux" path="res://levels/main_pong.gd" id="1_jfxgk"]
 [ext_resource type="Texture2D" uid="uid://dkb15ybe6rjdl" path="res://background_images/ufc_type_arena.jpg" id="1_jyf24"]
 [ext_resource type="PackedScene" uid="uid://dexsyd74h6opr" path="res://player_paddles/player_right.tscn" id="2_lr6qi"]
+[ext_resource type="Script" uid="uid://il7tc3ebrmtt" path="res://levels/left_grow_pts.gd" id="4_jfxgk"]
+[ext_resource type="Script" uid="uid://do2ibpdwim7te" path="res://levels/right_grow_pts.gd" id="5_i8x3p"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
-[ext_resource type="AudioStream" uid="uid://ci8d66jx1py4j" path="res://sound_effects/crowd_loop.wav" id="7_i8x3p"]
+[ext_resource type="AudioStream" uid="uid://bhvp042gmow7r" path="res://sound_effects/Gregor Quendel - Free Crowd Cheering Sounds - 02 - Strong cheering and soft rhythmic cheering.wav" id="8_jfxgk"]
 [ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
 [ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
+[ext_resource type="AudioStream" uid="uid://daqfvxh36xtqn" path="res://sound_effects/3_beep.wav" id="11_xh6on"]
+[ext_resource type="AudioStream" uid="uid://cbobd4ayfl54o" path="res://sound_effects/2_beep.wav" id="12_lsbha"]
+[ext_resource type="AudioStream" uid="uid://blrygp66utftb" path="res://sound_effects/1_beep.wav" id="13_m2db7"]
+[ext_resource type="AudioStream" uid="uid://d0j01wjfl1rub" path="res://sound_effects/391664__jeckkech__pause.wav" id="14_p833o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7mw5"]
 size = Vector2(51.18, 336.44)
@@ -40,22 +46,24 @@ speed = 600
 
 [node name="left_grow_pts" type="Label" parent="." unique_id=949069433]
 unique_name_in_owner = true
-offset_left = 36.0
-offset_top = 63.0
-offset_right = 76.0
-offset_bottom = 86.0
+offset_left = 24.0
+offset_top = 67.0
+offset_right = 64.0
+offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+script = ExtResource("4_jfxgk")
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
 position = Vector2(1037, 255)
 
 [node name="right_grow_pts" type="Label" parent="." unique_id=2082147458]
 unique_name_in_owner = true
-offset_left = 1006.0
+offset_left = 982.0
 offset_top = 67.0
-offset_right = 1046.0
+offset_right = 1022.0
 offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+script = ExtResource("5_i8x3p")
 
 [node name="top_bottom_wall" parent="." unique_id=477137306 instance=ExtResource("6_8s722")]
 position = Vector2(579, -29)
@@ -83,8 +91,8 @@ debug_color = Color(0.9024276, 0.27915984, 0.3521268, 0.41960785)
 
 [node name="background_crowd" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
 unique_name_in_owner = true
-stream = ExtResource("7_i8x3p")
-volume_db = -7.299
+stream = ExtResource("8_jfxgk")
+volume_db = -9.124
 autoplay = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=716771288]
@@ -164,6 +172,23 @@ offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 136
+
+[node name="3_beep" type="AudioStreamPlayer2D" parent="countdown" unique_id=246811795]
+unique_name_in_owner = true
+stream = ExtResource("11_xh6on")
+
+[node name="2_beep" type="AudioStreamPlayer2D" parent="countdown" unique_id=101867022]
+unique_name_in_owner = true
+stream = ExtResource("12_lsbha")
+
+[node name="1_beep" type="AudioStreamPlayer2D" parent="countdown" unique_id=1284033723]
+unique_name_in_owner = true
+stream = ExtResource("13_m2db7")
+
+[node name="go_beep" type="AudioStreamPlayer2D" parent="countdown" unique_id=1426415896]
+unique_name_in_owner = true
+stream = ExtResource("14_p833o")
+volume_db = -5.474
 
 [node name="restart_message" type="Control" parent="." unique_id=1834212276]
 layout_mode = 3

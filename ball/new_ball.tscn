@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs5tmp2xpnnk" path="res://ball/Sheets/Explode-Sheet.png" id="3_ikfnc"]
 [ext_resource type="AudioStream" uid="uid://cmiisxc76wqrx" path="res://sound_effects/573376__johnloser__cyber-punch-01.wav" id="5_gu8tq"]
 [ext_resource type="AudioStream" uid="uid://c1xbxalo713xm" path="res://sound_effects/317767__jalastram__sfx_explosion_14.wav" id="5_ikfnc"]
+[ext_resource type="AudioStream" uid="uid://cercyglyjrky4" path="res://sound_effects/crowd_pop.wav" id="7_hjt67"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yd1l"]
 
@@ -303,5 +304,10 @@ stream = ExtResource("5_gu8tq")
 unique_name_in_owner = true
 stream = ExtResource("5_ikfnc")
 volume_db = -10.07
+
+[node name="crowd_pop" type="AudioStreamPlayer2D" parent="." unique_id=38766966]
+unique_name_in_owner = true
+stream = ExtResource("7_hjt67")
+volume_db = -1.825
 
 [connection signal="area_entered" from="velocity_setter" to="." method="_on_velocity_setter_area_entered"]

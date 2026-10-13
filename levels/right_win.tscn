@@ -1,24 +1,28 @@
 [gd_scene format=3 uid="uid://dp27nl8bnk4sw"]
 
 [ext_resource type="Script" uid="uid://btr8yjnqg6fcy" path="res://levels/right_win.gd" id="1_wisc3"]
+[ext_resource type="Texture2D" uid="uid://cgbobp01rdu2x" path="res://background_images/space_bckgrnd.jpg" id="2_sop3l"]
+[ext_resource type="Script" uid="uid://qabp2sbfhxrp" path="res://levels/win_message.gd" id="2_v0617"]
 [ext_resource type="AudioStream" uid="uid://cac4okipmjxmu" path="res://music/843046__silverillusionist__victory-fanfare-8-bit-thunder-4.wav" id="3_v0617"]
+[ext_resource type="Script" uid="uid://dc1ssm3uflxo0" path="res://levels/right_restart.gd" id="3_vcosh"]
 
 [node name="right_win" type="Node2D" unique_id=441643794]
 script = ExtResource("1_wisc3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2137431190]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=941110505]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(28.76, 16.279999)
-color = Color(0, 0, 0, 1)
+scale = Vector2(0.24000001, 0.24000001)
+texture = ExtResource("2_sop3l")
 
 [node name="win_message" type="Label" parent="." unique_id=1905209836 groups=["labels"]]
-offset_left = 30.0
+offset_left = 33.0
 offset_top = 217.0
-offset_right = 1123.0
+offset_right = 1126.0
 offset_bottom = 290.0
 theme_override_font_sizes/font_size = 62
 text = "Right Player Has the Best Grip!"
+script = ExtResource("2_v0617")
 
 [node name="Label" type="Label" parent="." unique_id=1313841701 groups=["labels"]]
 offset_left = 483.0
@@ -26,6 +30,7 @@ offset_top = 332.0
 offset_right = 660.0
 offset_bottom = 355.0
 text = "Press \"R\" to Restart"
+script = ExtResource("3_vcosh")
 
 [node name="victory_music" type="AudioStreamPlayer2D" parent="." unique_id=1161509931]
 unique_name_in_owner = true

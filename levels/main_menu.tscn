@@ -30,9 +30,10 @@ script = ExtResource("1_3ye4h")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 649.0
+scale = Vector2(1, 1.1199996)
 theme_override_styles/panel = SubResource("StyleBoxTexture_sc5ad")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="menu_image" unique_id=444103713]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=444103713]
 position = Vector2(576, 468.28345)
 rotation = -0.010928027
 scale = Vector2(0.8330614, 0.8330614)
@@ -48,10 +49,10 @@ scale_amount_max = 12.0
 scale_amount_curve = SubResource("Curve_0yd1l")
 color_ramp = SubResource("Gradient_kps3k")
 
-[node name="ClenchedFist" type="Sprite2D" parent="menu_image" unique_id=1734539847]
+[node name="ClenchedFist" type="Sprite2D" parent="." unique_id=1734539847]
 position = Vector2(569, 514.2834)
-rotation = -0.5890039
-scale = Vector2(0.079999864, 0.079999864)
+rotation = -0.58900386
+scale = Vector2(0.07999987, 0.07999987)
 texture = ExtResource("2_7rktv")
 
 [node name="menu_buttons" type="VBoxContainer" parent="." unique_id=1753286266]

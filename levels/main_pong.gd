@@ -13,12 +13,16 @@ func  inst(pos):
 func _ready() -> void:
 	get_node("%press_r").visible = false
 	get_node("%countdown_numbers").set_text("3")
+	%"3_beep".play()
 	await get_tree().create_timer(1).timeout
 	get_node("%countdown_numbers").set_text("2")
+	%"2_beep".play()
 	await get_tree().create_timer(1).timeout
 	get_node("%countdown_numbers").set_text("1")
+	%"1_beep".play()
 	await get_tree().create_timer(1).timeout
 	get_node("%countdown_numbers").set_text("GRIP!")
+	%go_beep.play()
 	await get_tree().create_timer(1).timeout
 	get_node("%countdown_numbers").visible = false
 	inst(Vector2(560,350))
@@ -29,14 +33,19 @@ func _physics_process(delta: float) -> void:
 		get_node("%press_r").visible = false
 		get_node("%countdown_numbers").visible = true
 		get_node("%countdown_numbers").set_text("3")
+		%"3_beep".play()
 		await get_tree().create_timer(1).timeout
 		get_node("%countdown_numbers").set_text("2")
+		%"2_beep".play()
 		await get_tree().create_timer(1).timeout
 		get_node("%countdown_numbers").set_text("1")
+		%"1_beep".play()
 		await get_tree().create_timer(1).timeout
 		get_node("%countdown_numbers").set_text("GRIP!")
+		%go_beep.play()
 		await get_tree().create_timer(1).timeout
 		get_node("%countdown_numbers").visible = false
 		inst(Vector2(560,350))
+		
 		
 	

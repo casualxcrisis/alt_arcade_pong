@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dmqmbrnxctt56" path="res://levels/dys_on.gd" id="4_h5eox"]
 [ext_resource type="Script" uid="uid://tyajymity2w2" path="res://levels/back.gd" id="4_jt0ep"]
 [ext_resource type="AudioStream" uid="uid://drydtx8ncynb1" path="res://music/DavidKBD - Pink Bloom Pack - 01 - Pink Bloom.ogg" id="4_wnmni"]
+[ext_resource type="Script" uid="uid://w5neohfwex65" path="res://levels/dys_font.gd" id="4_xlbx4"]
 [ext_resource type="Script" uid="uid://dphievkhuptsv" path="res://levels/title.gd" id="5_pwfob"]
 [ext_resource type="Script" uid="uid://bb8kdm21at1ly" path="res://levels/dys_off.gd" id="5_xlbx4"]
 
@@ -21,14 +22,15 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 649.0
+scale = Vector2(1, 1.1200001)
 theme_override_styles/panel = SubResource("StyleBoxTexture_sc5ad")
 
 [node name="menu_buttons" type="VBoxContainer" parent="." unique_id=1753286266]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 506.0
-offset_right = 785.0
-offset_bottom = 582.0
+offset_left = 401.0
+offset_top = 505.0
+offset_right = 801.0
+offset_bottom = 581.0
 
 [node name="back" type="Button" parent="menu_buttons" unique_id=1059831122 groups=["labels"]]
 layout_mode = 2
@@ -60,6 +62,7 @@ script = ExtResource("3_jt0ep")
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Enable Dyslexia Font"
+script = ExtResource("4_xlbx4")
 
 [node name="dys_on" type="Button" parent="change_font/dys_font" unique_id=1525219309]
 layout_mode = 0
