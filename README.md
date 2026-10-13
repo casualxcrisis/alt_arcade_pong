@@ -7,6 +7,7 @@ Resources and Assets Used:
 - Hand Image: https://www.vecteezy.com/png/54587419-pointing-hand-gesture
 - Fireball: https://msfrantz.itch.io/free-fire-ball-pixel-art
 - Victory Music: https://freesound.org/people/SilverIllusionist/sounds/843046/
-- Crowd Noise: https://freesound.org/people/GregorQuendel/sounds/481782/
+- Crowd Noise: https://gregor-quendel.itch.io/free-crowd-cheering-sounds
 - Punch Noise: https://freesound.org/people/JohnLoser/sounds/573376/
 - Explosion: https://freesound.org/people/jalastram/sounds/317767/
+- Countdown Beeps: https://freesound.org/people/Mossy4/sounds/263655/
