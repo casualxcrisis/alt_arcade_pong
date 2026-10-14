@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://il7tc3ebrmtt" path="res://levels/left_grow_pts.gd" id="4_jfxgk"]
 [ext_resource type="Script" uid="uid://do2ibpdwim7te" path="res://levels/right_grow_pts.gd" id="5_i8x3p"]
 [ext_resource type="PackedScene" uid="uid://bfqukx6ubbawu" path="res://non_scoring_walls/top_bottom_wall.tscn" id="6_8s722"]
-[ext_resource type="AudioStream" uid="uid://bhvp042gmow7r" path="res://sound_effects/Gregor Quendel - Free Crowd Cheering Sounds - 02 - Strong cheering and soft rhythmic cheering.wav" id="8_jfxgk"]
+[ext_resource type="AudioStream" uid="uid://82dh6v0d7at3" path="res://sound_effects/Gregor Quendel - Free Crowd Cheering Sounds - 10 - Ambience.wav" id="8_xh6on"]
 [ext_resource type="Script" uid="uid://7tfi1tbiwwll" path="res://levels/right_score.gd" id="9_jfxgk"]
 [ext_resource type="Script" uid="uid://bx2e5eskux4rl" path="res://levels/left_score.gd" id="10_jfxgk"]
 [ext_resource type="AudioStream" uid="uid://daqfvxh36xtqn" path="res://sound_effects/3_beep.wav" id="11_xh6on"]
@@ -47,7 +47,7 @@ scale = Vector2(29.04, 1.8)
 color = Color(0, 0, 0, 1)
 
 [node name="player_left" parent="." unique_id=1713023521 instance=ExtResource("1_7nqg8")]
-position = Vector2(116, 256)
+position = Vector2(116, 330)
 speed = 600
 
 [node name="left_grow_pts" type="Label" parent="." unique_id=949069433]
@@ -60,7 +60,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 script = ExtResource("4_jfxgk")
 
 [node name="player_right" parent="." unique_id=323078360 instance=ExtResource("2_lr6qi")]
-position = Vector2(1037, 255)
+position = Vector2(1037, 329)
 
 [node name="right_grow_pts" type="Label" parent="." unique_id=2082147458]
 unique_name_in_owner = true
@@ -97,7 +97,7 @@ debug_color = Color(0.9024276, 0.27915984, 0.3521268, 0.41960785)
 
 [node name="background_crowd" type="AudioStreamPlayer2D" parent="." unique_id=88647144]
 unique_name_in_owner = true
-stream = ExtResource("8_jfxgk")
+stream = ExtResource("8_xh6on")
 volume_db = -9.124
 autoplay = true
 
@@ -160,9 +160,9 @@ script = ExtResource("9_jfxgk")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 544.0
-offset_top = 275.0
+offset_top = 346.0
 offset_right = 584.0
-offset_bottom = 315.0
+offset_bottom = 386.0
 
 [node name="countdown_numbers" type="Label" parent="countdown" unique_id=254333376 groups=["labels"]]
 unique_name_in_owner = true
@@ -200,10 +200,10 @@ volume_db = -5.474
 [node name="restart_message" type="Control" parent="." unique_id=1834212276]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 531.0
-offset_top = 321.0
-offset_right = 571.0
-offset_bottom = 361.0
+offset_left = 512.0
+offset_top = 348.0
+offset_right = 552.0
+offset_bottom = 388.0
 
 [node name="press_r" type="Label" parent="restart_message" unique_id=836037169 groups=["labels"]]
 unique_name_in_owner = true
