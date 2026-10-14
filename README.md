@@ -11,3 +11,4 @@ Resources and Assets Used:
 - Punch Noise: https://freesound.org/people/JohnLoser/sounds/573376/
 - Explosion: https://freesound.org/people/jalastram/sounds/317767/
 - Countdown Beeps: https://freesound.org/people/Mossy4/sounds/263655/ and https://freesound.org/people/jeckkech/sounds/391664/
+- Dyslexia Friendly Font: https://antijingoist.itch.io/opendyslexic
