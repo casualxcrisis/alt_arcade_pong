@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cercyglyjrky4" path="res://sound_effects/crowd_pop.wav" id="7_hjt67"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yd1l"]
+radius = 9.15
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gu8tq"]
 atlas = ExtResource("1_dtvr0")
@@ -204,6 +205,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sc5ad"]
+radius = 8.7
 
 [sub_resource type="Curve" id="Curve_ikfnc"]
 _limits = [-360.0, 360.0, 0.0, 1.0]

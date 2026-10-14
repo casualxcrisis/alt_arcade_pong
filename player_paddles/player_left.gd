@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 			$player_left_collision.scale.y = base_coll_scale_y * 5
 			$vel_setter.scale.y = base_vel_setter_y * 5
 			$%vel_setter_col.scale.y = base_vel_setter_coll_y * 5
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(4).timeout
 			$player_left_sprite.scale.y = base_sprite_scale_y
 			$player_left_sprite.scale.x = base_sprite_scale_x
 			$player_left_collision.scale.y = base_coll_scale_y
